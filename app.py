@@ -13,7 +13,7 @@ def ejercicio1():
         asistencia = int(request.form["asistencia"])
         promedio = round(sum(notas)/3, 1)
         for nota in notas:
-            if not(nota >= 0 and nota <= 70):
+            if not(nota >= 0 and nota <= 70): #Opcional pero me gustaria validar solo numero en el rango de notas
                 error = "La nota debe estar en un rango de 0 a 70"
                 break
             else:
@@ -33,7 +33,7 @@ def ejercicio1():
 def ejercicio2():
     if request.method == "POST":
         nombres = [request.form["nombre1"], request.form["nombre2"], request.form["nombre3"]]
-        for numero, nombre in enumerate(nombres):
+        for numero, nombre in enumerate(nombres): # Uso enumerate para tener un control sobre las iteraciones
         
             if numero == 0:
                 mayor = nombre
