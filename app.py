@@ -15,6 +15,7 @@ def ejercicio1():
         for nota in notas:
             if not(nota >= 0 and nota <= 70): #Opcional pero me gustaria validar solo numero en el rango de notas
                 error = "La nota debe estar en un rango de 0 a 70"
+                aprobado=None
                 break
             else:
 
@@ -26,7 +27,7 @@ def ejercicio1():
 
 
 
-        return render_template("ejercicio1.html", aprobado=aprobado, promedio=promedio, error = error)
+        return render_template("ejercicio1.html", aprobado=aprobado, promedio=promedio, error = error, method = request.method)
     return render_template("ejercicio1.html")
 
 @app.route('/ejercicio2', methods=["GET", "POST"])
